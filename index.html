@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Ứng dụng good-fast-cheap</title>
+</head>
+
+<style>
+
+    .checkBox{
+        width: 30px;
+        height: 30px;
+        margin: 0;
+        padding: 0;
+    }
+
+    label{
+        width: 70px;
+        height: 30px;
+        margin: 10px 0;
+        padding: 0;
+    }
+
+</style>
+
+<body>
+<table>
+    <tr>
+        <th><input class="checkBox" type="radio" id="check1" onClick="onClick(1)"></th>
+        <th><label for="check1">GOOD</label></th>
+    </tr>
+    <tr>
+        <th><input class="checkBox" type="radio" id="check2" onClick="onClick(2)"></th>
+        <th><label for="check2">CHEAP</label></th>
+    </tr>
+    <tr>
+        <th><input class="checkBox" type="radio" id="check3" onClick="onClick(3)"></th>
+        <th><label for="check3">FAST</label></th>
+    </tr>
+</table>
+<script>
+
+    function onClick(i){
+        let check1 = document.getElementById("check1").checked;
+        let check2 = document.getElementById("check2").checked;
+        let check3 = document.getElementById("check3").checked;
+
+        switch (i){
+            case 1:
+                // alert(check1);
+                if (check2 == true && check3 == true){
+                    document.getElementById("check3").checked = false;
+                }
+                break;
+            case 2:
+                if (check1 == true && check3 == true){
+                    document.getElementById("check1").checked = false;
+                }
+                break;
+            case 3:
+                if (check1 == true && check2 == true){
+                    document.getElementById("check2").checked = false;
+                }
+                break;
+        }
+    }
+
+</script>
+</body>
+</html>
